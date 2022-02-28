@@ -1,0 +1,213 @@
+@import '~normalize.css';
+@import 'variables/mixins';
+
+:root {
+  --scheme: dark;
+  --background: #26294A;
+  --background-menu: rgba(60, 63, 92, 0.2);
+  --background-card: #2C2F52;
+  --background-filter: #343958;
+  --background-filter-select: #252845;
+  --line: rgba(255, 255, 255, 0.15);
+  --text: #FFFFFF;
+  --text-primary-btn: #FFFFFF;
+  --text-secondary: #A0AEC0;
+  --accent: #4A9CF7;
+  --menu-select-item-bg: #2D3053;
+}
+
+.light-theme {
+  --scheme: light;
+  --background: #F8F9FB;
+  --background-menu: rgba(255, 255, 255, 0.5);
+  --background-card: #ffffff;
+  --background-filter: #F2F4F8;
+  --background-filter-select: #FFFFFF;
+  --line: rgba(45, 55, 72, 0.15);
+  --text: #2D3748;
+  --text-primary-btn: #FFFFFF;
+  --text-secondary: #A0AEC0;
+  --accent: #4A9CF7;
+  --menu-select-item-bg: #F1F3F8;
+}
+
+html {
+  height: 100%;
+  font-size: 10px;
+  @include more-fullhd {
+    font-size: 0.52vw;
+  }
+  &::-webkit-scrollbar {
+    width: 1.2rem
+  }
+  &::-webkit-scrollbar-button {
+    display: none
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 0.2rem solid transparent;
+    box-shadow: inset 0 0 2.5rem 2.5rem var(--accent);
+    border-radius: 2rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--background-filter);
+    border-radius: 2rem;
+    transition: background 0.3s;
+  }
+}
+
+body {
+  padding: 2rem;
+  background: var(--background);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  transition: 0.3s;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 29.1rem 1fr;
+  grid-gap: 2rem;
+  height: 100%;
+  @include less-fullhd {
+    grid-template-columns: 27.5rem 1fr;
+  }
+  @include w1400 {
+    grid-template-columns: 23.4rem 1fr;
+    grid-gap: 1.6rem;
+  }
+  @include w1023 {
+    grid-template-columns: 11.1rem 1fr;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sprite {
+  display: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2.4rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--black-text);
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: var(--text-primary-btn);
+  border: 0.1rem solid var(--accent);
+}
+
+.secondary-btn {
+  background: none;
+  color: var(--text);
+  border: 0.1rem solid var(--accent);
+}
+
+input:not([type]),
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='password'],
+textarea {
+  width: 100%;
+  border: 0.1rem solid var(--silver);
+  background: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--text);
+  &::placeholder {
+    color: var(--text-secondary);
+  }
+  &.input-err {
+  }
+  &.input-ok {
+  }
+}
+
+input:not([type]),
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='password'] {
+  height: 4.5rem;
+  padding: 0 2rem;
+  border-radius: 1.3rem;
+}
+
+@import 'blocks/common/menu';
+@import 'blocks/common/top';
+@import 'blocks/wallet';

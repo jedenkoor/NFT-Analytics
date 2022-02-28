@@ -1,0 +1,50 @@
+extends ../template
+
+block variables
+  - var title = 'Карта сайта'
+
+block content
+  style.
+    .title {
+      margin-bottom: 3rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td {
+      width: 50%;
+      border: 0.1rem solid var(--text);
+      transition: border-color 0.3s;
+    }
+    td a {
+      display: block;
+      margin: 0!important;
+      padding: 2rem;
+      color: var(--text)!important;
+      text-decoration: none!important;
+      transition: color 0.3s;
+    }
+    @media screen and (max-width: 767px) {
+      tr,
+      td {
+        display: block;
+      }
+      tr:not(:last-child) td {
+        border-bottom: none;
+      }
+      td {
+        width: 100%;
+      }
+      td a {
+        padding: 1rem;
+      }
+    }
+
+  .container.margin-section
+    h1.title Карта сайта
+    table
+      tbody
+        tr
+          td
+            a(href="wallet.html" target="_blank") Wallet
