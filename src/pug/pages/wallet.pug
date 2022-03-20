@@ -64,20 +64,18 @@ block content
         .wallet-charts__top
           .wallet-charts__wrap
             .wallet-charts__filter.wallet-charts__filter--currency.wallet-charts-filter
-              span(style="left: 0.4rem")
               button.wallet-charts-filter__item USD
-              button.wallet-charts-filter__item ETH
+              button.wallet-charts-filter__item.active ETH
           .wallet-charts__wrap
             .wallet-charts__filter.wallet-charts__filter--period.wallet-charts-filter
-              span(style="left: 0.4rem")
-              button.wallet-charts-filter__item 15M
+              button.wallet-charts-filter__item.active 15M
               button.wallet-charts-filter__item 1H
               button.wallet-charts-filter__item 3H
               button.wallet-charts-filter__item 1D
               button.wallet-charts-filter__item 7D
               button.wallet-charts-filter__item 1M
               button.wallet-charts-filter__item 3M
-              button.wallet-charts-filter__item
+              button.wallet-charts-filter__item.wallet-charts-filter__item--calendar
                 svg.wallet-charts-filter__calendar
                   use(xlink:href="#calendar")
           .wallet-charts__btns.wallet-charts-btns
@@ -123,7 +121,7 @@ block content
         .wallet-history__col Date
         .wallet-history__col
       ul.wallet-history__list
-        li.wallet-history__item.active
+        li.wallet-history__item
           .wallet-history__row
             .wallet-history__col
               svg.wallet-history__type
@@ -168,7 +166,7 @@ block content
             .wallet-history-hidden__col
               span.wallet-history-hidden__name Date:
               span.wallet-history-hidden__value Oct 09, 2021 15:30 PM
-        li.wallet-history__item
+        li.wallet-history__item.active
           .wallet-history__row
             .wallet-history__col
               svg.wallet-history__type
@@ -300,3 +298,5 @@ block content
             .wallet-history-hidden__col
               span.wallet-history-hidden__name Date:
               span.wallet-history-hidden__value Oct 09, 2021 15:30 PM
+      .wallet-history__bot
+        button.wallet-history__more Load more

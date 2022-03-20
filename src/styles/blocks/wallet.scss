@@ -16,6 +16,14 @@
     @include w1400 {
       padding: 0.7rem 0.6rem;
     }
+    @include w1023 {
+      margin-bottom: 1.6rem;
+    }
+    @include w767 {
+      margin-bottom: 1rem;
+      padding: 0.9rem 0.1rem 0.8rem;
+      border-radius: 1rem;
+    }
   }
   &-list {
     &__add {
@@ -28,12 +36,19 @@
       @include w1400 {
         margin-right: 0.6rem;
       }
+      @include w767 {
+        margin-right: 0;
+      }
       svg {
         width: 2rem;
         height: 2rem;
         @include w1400 {
           width: 1.8rem;
           height: 1.8rem;
+        }
+        @include w767 {
+          width: 1.5rem;
+          height: 1.5rem;
         }
       }
     }
@@ -49,6 +64,9 @@
         margin-right: 2rem;
         @include w1400 {
           margin-right: 1.8rem;
+        }
+        @include w767 {
+          margin-right: 1rem;
         }
       }
       @include active {
@@ -78,6 +96,10 @@
           width: 4rem;
           height: 4rem;
         }
+        @include w767 {
+          width: 3.6rem;
+          height: 3.6rem;
+        }
       }
       &__delete {
         position: absolute;
@@ -99,9 +121,19 @@
           top: -0.5rem;
           right: -1.6rem;
         }
+        @include w767 {
+          top: -0.4rem;
+          right: -0.8rem;
+          width: 1.1rem;
+          height: 1.1rem;
+        }
         svg {
           width: 0.7rem;
           height: 0.7rem;
+          @include w767 {
+            width: 0.5rem;
+            height: 0.5rem;
+          }
         }
       }
     }
@@ -111,8 +143,19 @@
     grid-template-columns: 55.1rem 1fr;
     grid-gap: 2rem;
     margin-bottom: 2rem;
+    @include less-fullhd {
+      grid-template-columns: 41% 1fr;
+    }
     @include w1400 {
       grid-template-columns: auto;
+    }
+    @include w1023 {
+      grid-gap: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+    @include w767 {
+      grid-gap: 1.9rem;
+      margin-bottom: 2.3rem;
     }
   }
   &__general {
@@ -123,6 +166,13 @@
     background: var(--background-card);
     border-radius: 2rem;
     transition: background 0.3s;
+    @include w1023 {
+      padding: 1.5rem 2rem;
+    }
+    @include w767 {
+      padding: 1.3rem 1.2rem 1.8rem;
+      border-radius: 1.4rem;
+    }
   }
   &-general {
     &__notice {
@@ -135,21 +185,53 @@
       border: none;
       color: var(--accent);
       cursor: pointer;
+      @include less-fullhd {
+        right: 1.3rem;
+      }
+      @include w1023 {
+        top: 1.1rem;
+        right: 1rem;
+      }
+      @include w767 {
+        top: 0.5rem;
+        right: 0.7rem;
+      }
       svg {
         width: 2.7rem;
         height: 3rem;
+        @include w1023 {
+          width: 2.1rem;
+          height: 2.4rem;
+        }
+        @include w767 {
+          width: 2.1rem;
+          height: 2.4rem;
+        }
       }
     }
     &__top {
       display: flex;
       align-items: center;
       margin-bottom: 0.9rem;
+      @include w1023 {
+        margin-bottom: 0.5rem;
+      }
     }
     &__img {
       width: 8rem;
       height: 8rem;
       margin-right: 2rem;
       border-radius: 50%;
+      @include w1023 {
+        width: 6rem;
+        height: 6rem;
+        margin-right: 1.6rem;
+      }
+      @include w767 {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-right: 1.3rem;
+      }
     }
     &__name {
       display: flex;
@@ -157,6 +239,14 @@
       margin-bottom: 0.4rem;
       font-weight: bold;
       font-size: 2.4rem;
+      @include w1023 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+      @include w767 {
+        margin-bottom: 0;
+        font-size: 1.4rem
+      }
     }
     &__edit {
       display: flex;
@@ -169,11 +259,21 @@
       svg {
         width: 1.8rem;
         height: 1.8rem;
+        @include w767 {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
       }
     }
     &__code {
       font-weight: 500;
       color: #A0AEC0;
+      @include w1023 {
+        font-size: 1.4rem;
+      }
+      @include w767 {
+        font-size: 1rem;
+      }
     }
     &__row {
       display: flex;
@@ -183,11 +283,25 @@
       margin-left: -1rem;
       padding: 1.9rem 1rem;
       transition: border-color 0.3s;
+      @include w1023 {
+        padding: 1.4rem 1rem;
+      }
+      @include w767 {
+        width: 100%;
+        margin-left: 0;
+        padding: 1rem 0;
+      }
       & + & {
         border-top: 0.1rem solid var(--line);
       }
       span {
         line-height: 1.5;
+        @include w1023 {
+          font-size: 1.4rem;
+        }
+        @include w767 {
+          font-size: 1.2rem;
+        }
         svg {
           transform: translateY(0.3rem);
           width: 1rem;
@@ -198,18 +312,34 @@
     }
     &__list {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
       width: calc(100% + 1rem);
-      margin-bottom: 1.7rem;
       margin-left: -0.5rem;
       padding-left: 0;
       list-style: none;
+      @include w767 {
+        width: 100%;
+        margin-bottom: 1.1rem;
+        margin-left: 0;
+      }
     }
     &__collection {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 1.6rem;
+      &:not(:last-child) {
+        margin-right: 1.38rem;
+        @include less-fullhd {
+          margin-right: 0.74rem;
+        }
+        @include w1400 {
+          margin-right: 1.6rem;
+        }
+        @include w1023 {
+          margin-right: 1rem;
+        }
+      }
     }
     &-collection {
       &__img {
@@ -218,19 +348,51 @@
         border-radius: 2.1rem;
         border: 0.1rem solid var(--line);
         transition: border-color 0.3s;
+        @include less-fullhd {
+          padding: 0.3rem;
+        }
+        @include w767 {
+          margin-bottom: 0.2rem;
+          padding: 0.2rem;
+          border-radius: 1rem;
+        }
         img {
           width: 6.2rem;
           height: 6.2rem;
           border-radius: 1.8rem;
+          @include w1023 {
+            width: 5.6rem;
+            height: 5.6rem;
+          }
+          @include w767 {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+          }
         }
       }
       &__price {
         line-height: 1.5;
+        @include w1023 {
+          font-size: 1.4rem;
+        }
+        @include w767 {
+          font-size: 1.1rem;
+        }
         svg {
           transform: translateY(0.3rem);
           width: 1rem;
           height: 1.7rem;
           margin-right: 0.5rem;
+          @include w1023 {
+            transform: translateY(0.1rem);
+            width: 0.7rem;
+            height: 1.2rem;
+            margin-right: 0.3rem;
+          }
+          @include w767 {
+            transform: translateY(0.2rem);
+          }
         }
       }
     }
@@ -240,15 +402,33 @@
       padding: 1.5rem 0 1.4rem;
       font-size: 1.6rem;
       font-weight: 600;
+      @include w1023 {
+        font-size: 1.4rem;
+      }
+      @include w767 {
+        padding: 1rem 0;
+        font-size: 1.2rem;
+      }
     }
   }
   &__charts {
     display: flex;
     flex-direction: column;
+    height: fit-content;
     padding: 2.4rem 2rem 2rem;
     background: var(--background-card);
     border-radius: 2rem;
     transition: background 0.3s;
+    @include w1400 {
+      padding: 2rem;
+    }
+    @include w1023 {
+      padding: 1.5rem;
+    }
+    @include w767 {
+      padding: 1.4rem;
+      border-radius: 1.4rem;
+    }
   }
   &-charts {
     &__top {
@@ -261,11 +441,16 @@
     &__wrap {
       &:nth-child(2) {
         @include less-fullhd {
-          width: 100%;
-          order: 1;
           display: flex;
-          margin-top: 1.2rem;
-          margin-right: 0;
+          margin-left: auto;
+          margin-bottom: 1.2rem;
+        }
+        @include w767 {
+          order: inherit;
+          width: auto;
+          margin-top: 0;
+          margin-bottom: 1rem;
+          margin-left: auto;
         }
       }
     }
@@ -278,12 +463,15 @@
       box-shadow: 0 0.35rem 0.55rem rgba(0, 0, 0, 0.02);
       border-radius: 1.6rem;
       transition: background 0.3s;
+      @include w767 {
+        border-radius: 1.1rem;
+      }
       &--currency {
-        span {
-          width: 4.9rem;
-        }
         .wallet-charts-filter__item {
           width: 4.9rem;
+          @include w767 {
+            width: 4rem;
+          }
           &:not(:last-child) {
             margin-right: 0.3rem;
           }
@@ -294,11 +482,16 @@
           margin-right: 0;
           margin-left: auto;
         }
-        span {
-          width: 4rem;
-        }
         .wallet-charts-filter__item {
           width: 4rem;
+          @include w767 {
+            width: 3.3rem;
+          }
+          &:not(.wallet-charts-filter__item--calendar) {
+            @include w767 {
+              display: none;
+            }
+          }
           &:not(:last-child) {
             margin-right: 0.6rem;
           }
@@ -306,16 +499,6 @@
       }
     }
     &-filter {
-      span {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 4rem;
-        background: var(--background-filter-select);
-        box-shadow: 0 0.35rem 0.55rem rgba(0, 0, 0, 0.02);
-        border-radius: 1.2rem;
-        transition: background 0.3s, left ease-in-out 0.3s;
-      }
       &__item {
         position: relative;
         z-index: 2;
@@ -326,19 +509,40 @@
         padding: 0;
         background: none;
         border: none;
+        border-radius: 1.2rem;
         line-height: 150%;
         cursor: pointer;
         font-weight: 500;
         font-size: 1.6rem;
+        transition: background 0.3s, color 0.3s;
+        @include w1023 {
+          font-size: 1.4rem;
+        }
+        @include w767 {
+          height: 3.2rem;
+          font-size: 1.2rem;
+        }
+        &.active {
+          background: var(--background-filter-current);
+          box-shadow: 0 0.35rem 0.55rem rgba(0, 0, 0, 0.02);
+        }
       }
       &__calendar {
         width: 2.4rem;
         height: 2.6rem;
+        @include w1023 {
+          width: 2rem;
+          height: 2.2rem;
+        }
+        @include w767 {
+          width: 1.5rem;
+          height: 1.6rem;
+        }
       }
     }
     &__btns {
       display: flex;
-      margin-left: auto;
+      width: 100%;
     }
     &-btns {
       &__btn {
@@ -351,11 +555,18 @@
         border-radius: 1.4rem;
         cursor: pointer;
         white-space: nowrap;
+        @include w1023 {
+          font-size: 1.5rem;
+        }
+        @include w767 {
+          flex: 1;
+          height: 4.1rem;
+          padding: 0;
+          border-radius: 1.1rem;
+          font-size: 1.4rem;
+        }
         &:not(:last-child) {
           margin-right: 1.5rem;
-          @include less-fullhd {
-            margin-right: 1rem;
-          }
         }
         &:nth-child(1) {
           span {
@@ -413,6 +624,9 @@
             width: 100%;
             height: 100%;
             border-radius: 1.4rem;
+            @include w767 {
+              border-radius: 1.1rem;
+            }
           }
           &:after {
             content: '';
@@ -424,6 +638,13 @@
             background: var(--background-card);
             border-radius: 1.4rem;
             transition: background 0.3s;
+            @include w767 {
+              top: 0.1rem;
+              left: 0.1rem;
+              width: calc(100% - 0.2rem);
+              height: calc(100% - 0.2rem);
+              border-radius: 1.1rem;
+            }
           }
         }
         svg {
@@ -433,7 +654,161 @@
           margin-left: 2.6rem;
           margin-right: 0.2rem;
           @include less-fullhd {
-            margin-left: 1rem;
+            margin-left: 2.2rem;
+          }
+          @include w767 {
+            width: 0.9rem;
+            height: 1.4rem;
+          }
+        }
+      }
+    }
+    &__selects {
+      display: flex;
+      margin-right: auto;
+      margin-left: 3rem;
+      @include less-fullhd {
+        margin-right: 0;
+        margin-bottom: 1.2rem;
+        margin-left: auto;
+      }
+      @include w767 {
+        margin-top: 1.2rem;
+        margin-bottom: 0;
+      }
+    }
+    &-selects {
+      &__col {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+          margin-right: 1.9rem;
+          @include w767 {
+            margin-right: 1.2rem;
+          }
+        }
+        &:first-child {
+          .wallet-charts-selects__current {
+            border: 0.1rem solid #4A9CF7;
+            background: var(--background-select-current-1);
+          }
+        }
+        &:last-child {
+          .wallet-charts-selects__current {
+            border: 1px solid rgba(229, 62, 142, 0.7);
+            background: var(--background-select-current-2);
+          }
+        }
+        span {
+          @include w767 {
+            font-size: 1.1rem;
+          }
+        }
+      }
+      &__select {
+        position: relative;
+        margin-left: 1rem;
+        @include w767 {
+          margin-left: 0.8rem;
+        }
+        &.active {
+          .wallet-charts-selects__current {
+            &:before {
+              top: 2.1rem;
+              transform: rotate(-45deg) scale(-1);
+              @include w767 {
+                top: 1.8rem;
+              }
+            }
+          }
+          .wallet-charts-selects__list {
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            transition: opacity 0.3s, transform 0.4s cubic-bezier(.215,.61,.355,1), visibility 0s 0s;
+          }
+        }
+      }
+      &__current {
+        position: relative;
+        width: 17rem;
+        padding: 1.4rem 3.2rem 1.6rem 1.6rem;
+        border-radius: 1.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: left;
+        font-weight: 400;
+        font-size: 1.4rem;
+        cursor: pointer;
+        @include w767 {
+          width: 11.2rem;
+          padding: 1.3rem 2.1rem 1.2rem 1.2rem;
+          border-radius: 0.8rem;
+          font-size: 1.1rem;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 1.7rem;
+          right: 1.7rem;
+          width: 0.7rem;
+          height: 0.7rem;
+          border-bottom: 0.15rem solid var(--text);
+          border-left: 0.15rem solid var(--text);
+          transform: rotate(-45deg);
+          transition: 0.3s;
+          @include w767 {
+            top: 1.5rem;
+            right: 1.1rem;
+            width: 0.6rem;
+            height: 0.6rem;
+          }
+        }
+      }
+      &__list {
+        position: absolute;
+        top: calc(100% + 0.7rem);
+        z-index: 3;
+        width: 100%;
+        padding: 0.7rem 0.6rem;
+        list-style: none;
+        background: var(--background-filter-select);
+        border: 0.1rem solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0.7rem 2.3rem rgba(255, 255, 255, 0.05);
+        border-radius: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(0.6rem);
+        transition: opacity 0.3s, transform 0.4s cubic-bezier(.215,.61,.355,1), visibility 0s 0.3s;
+        @include w767 {
+          border-radius: 0.8rem;
+        }
+      }
+      &__item {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 0.4rem;
+        }
+        &.active {
+          button {
+            background: var(--background-select-active);
+          }
+        }
+        button {
+          width: 100%;
+          padding: 0.3rem 0.9rem;
+          background: none;
+          border: none;
+          border-radius: 0.7rem;
+          text-align: left;
+          font-weight: 500;
+          font-size: 1.4rem;
+          line-height: 1.4;
+          cursor: pointer;
+          @include w767 {
+            border-radius: 0.4rem;
+            font-size: 1.1rem;
           }
         }
       }
@@ -443,6 +818,9 @@
       & > img {
         width: 100%;
         height: 32rem;
+        @include w767 {
+          height: 28rem;
+        }
       }
     }
   }
@@ -454,6 +832,15 @@
     transition: background 0.3s;
     @include less-fullhd {
       padding: 2rem;
+    }
+    @include w1023 {
+      padding: 1.5rem;
+    }
+    @include w767 {
+      margin-right: -1rem;
+      margin-left: -1rem;
+      padding: 0;
+      background: none;
     }
   }
   &-history {
@@ -468,12 +855,40 @@
       @include w1400 {
         margin-bottom: 3.2rem;
       }
+      @include w767 {
+        display: block;
+        margin-bottom: 0;
+      }
     }
     &-top {
       &__title {
         margin-right: 2rem;
         @include w1400 {
           font-size: 1.5rem;
+        }
+        @include w1023 {
+          font-size: 1.4rem;
+        }
+        @include w767 {
+          margin-right: 0;
+          margin-left: 0.9rem;
+          font-size: 1.2rem;
+        }
+      }
+      &__btns {
+        @include w767 {
+          display: flex;
+          width: 100vw;
+          margin-top: 1.2rem;
+          padding-bottom: 0.9rem;
+          padding-left: 0.9rem;
+          overflow-x: auto;
+        }
+        &:after {
+          @include w767 {
+            content: '';
+            flex: 0 0 0.9rem;
+          }
         }
       }
       &__btn {
@@ -485,7 +900,7 @@
         border: none;
         border-radius: 1.2rem;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 1.3rem;
         cursor: pointer;
         &:not(:last-child) {
           margin-right: 1.5rem;
@@ -552,6 +967,12 @@
             background: var(--background-card);
             border-radius: 1.2rem;
             transition: background 0.3s;
+            @include w767 {
+              top: 0.1rem;
+              left: 0.1rem;
+              width: calc(100% - 0.2rem);
+              height: calc(100% - 0.2rem);
+            }
           }
         }
       }
@@ -571,6 +992,12 @@
       }
       @include w1400 {
         padding: 1.1rem 1rem 0.9rem;
+      }
+      @include w1023 {
+        padding: 0.9rem 1rem;
+      }
+      @include w369 {
+        width: 100vw;
       }
       &--header {
         padding: 1.7rem 2rem;
@@ -594,6 +1021,12 @@
       @include w1400 {
         line-height: 1.4;
       }
+      @include w1023 {
+        font-size: 1.4rem;
+      }
+      @include w767 {
+        font-size: 1.2rem;
+      }
       &:nth-child(1) {
         flex: 0 0 5rem;
         @include less-fullhd {
@@ -601,6 +1034,9 @@
         }
         @include w1400 {
           flex: 0 0 4.2rem;
+        }
+        @include w767 {
+          flex: 0 0 3.7rem;
         }
       }
       &:nth-child(2) {
@@ -611,6 +1047,22 @@
         @include w1400 {
           flex: 0 0 35.3%;
         }
+        @include w1023 {
+          flex: 0 0 36.6%;
+        }
+        @include w767 {
+          flex: 1;
+        }
+        @include w369 {
+          flex: 0 0 10%;
+          width: 30%;
+        }
+        span {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
       }
       &:nth-child(3) {
         flex: 0 0 21.5%;
@@ -619,6 +1071,16 @@
         }
         @include w1400 {
           flex: 1;
+        }
+        @include w369 {
+          flex: 0 0 10%;
+          width: 30%;
+        }
+        span {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       }
       &:nth-child(4) {
@@ -647,6 +1109,15 @@
         @include w1400 {
           flex: 0 0 18.1%;
         }
+        @include w1023 {
+          flex: 0 0 15.3%;
+        }
+        @include w767 {
+          flex: 0 0 14.2%;
+        }
+        @include w369 {
+          flex: 1;
+        }
       }
       &:nth-child(7) {
         flex: 1;
@@ -663,12 +1134,19 @@
         @include w1400 {
           flex: 0 0 2.4rem;
         }
+        @include w767 {
+          flex: 0 0 1.9rem;
+        }
       }
     }
     &__type {
       flex-shrink: 0;
       width: 2.2rem;
       height: 2.2rem;
+      @include w767 {
+        width: 2rem;
+        height: 2rem;
+      }
     }
     &__img {
       flex-shrink: 0;
@@ -677,6 +1155,13 @@
       border-radius: 50%;
       border: 0.1rem solid #A0AEC0;
       transition: border-color 0.3s;
+      @include w1023 {
+        margin-right: 1rem;
+      }
+      @include w767 {
+        margin-right: 0.8rem;
+        padding: 0.1rem;
+      }
       img {
         width: 3.6rem;
         height: 3.6rem;
@@ -684,6 +1169,10 @@
         @include less-fullhd {
           width: 4.4rem;
           height: 4.4rem;
+        }
+        @include w767 {
+          width: 1.9rem;
+          height: 1.9rem;
         }
       }
     }
@@ -700,6 +1189,12 @@
       @include w1400 {
         margin-right: 1rem;
       }
+      @include w1023 {
+        transform: none;
+        width: 0.7rem;
+        height: 1.2rem;
+        margin-right: 0.6rem;
+      }
     }
     &__link {
       flex-shrink: 0;
@@ -714,12 +1209,19 @@
         width: 2.4rem;
         height: 2.4rem;
       }
+      @include w767 {
+        width: 1.9rem;
+        height: 1.9rem;
+      }
     }
     &__item {
       border-bottom: 0.1rem solid var(--line);
       transition: background-color 0.3s;
       &:first-child {
         border-top: 0.1rem solid var(--line);
+        @include w767 {
+          border-top: none;
+        }
       }
       &.active {
         @include w1400 {
@@ -733,17 +1235,47 @@
     &__hidden {
       display: none;
       padding: 0.9rem 0 0.9rem 5.2rem;
+      @include w767 {
+        justify-content: space-between;
+        padding: 0.9rem 1rem 0.9rem 1.3rem;
+      }
     }
     &-hidden {
       &__col {
         display: flex;
         flex-direction: column;
-        margin-right: 7.1rem;
         font-size: 1.5rem;
+        @include w1023 {
+          font-size: 1.4rem;
+        }
+        @include w767 {
+          flex-direction: row;
+          font-size: 1.2rem;
+        }
+        &:not(:last-child) {
+          margin-right: 7.1rem;
+          @include w1023 {
+            margin-right: 6rem;
+          }
+          @include w767 {
+            margin-right: 0;
+          }
+        }
+        &:last-child {
+          .wallet-history-hidden__name {
+            @include w767 {
+              display: none;
+            }
+          }
+        }
       }
       &__name {
         margin-bottom: 0.4rem;
         color: #A0AEC0;
+        @include w767 {
+          margin-right: 0.7rem;
+          margin-bottom: 0;
+        }
       }
       &__value {
         display: flex;
@@ -753,6 +1285,33 @@
         width: 0.8rem;
         height: 1.4rem;
         margin-right: 0.6rem;
+        @include w1023 {
+          width: 0.7rem;
+          height: 1.2rem;
+        }
+      }
+    }
+    &__bot {
+      display: flex;
+      justify-content: center;
+    }
+    &__more {
+      margin: 1.4rem auto 0;
+      padding: 1rem;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+      @include w1400 {
+        font-size: 1.5rem;
+      }
+      @include w1023 {
+        font-size: 1.4rem;
+      }
+      @include w767 {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
       }
     }
   }

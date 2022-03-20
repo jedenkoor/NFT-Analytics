@@ -7,12 +7,17 @@
   --background-menu: rgba(60, 63, 92, 0.2);
   --background-card: #2C2F52;
   --background-filter: #343958;
-  --background-filter-select: #252845;
+  --background-filter-current: #252845;
+  --background-filter-select: linear-gradient(134.09deg, rgba(74, 156, 247, 0.2) 3.46%, rgba(74, 156, 247, 0) 47.02%), #3F4264;
+  --background-select-current-1: linear-gradient(134.09deg, rgba(74, 156, 247, 0.2) 3.46%, rgba(74, 156, 247, 0) 64.94%), #343958;
+  --background-select-current-2: linear-gradient(134.09deg, rgba(241, 120, 178, 0.112) 3.46%, rgba(229, 62, 142, 0.028) 64.94%), #343958;
+  --background-select-active: #2D3053;
   --line: rgba(255, 255, 255, 0.15);
   --text: #FFFFFF;
   --text-primary-btn: #FFFFFF;
   --text-secondary: #A0AEC0;
   --accent: #4A9CF7;
+  --accent-light: #FFFFFF;
   --menu-select-item-bg: #2D3053;
 }
 
@@ -22,17 +27,21 @@
   --background-menu: rgba(255, 255, 255, 0.5);
   --background-card: #ffffff;
   --background-filter: #F2F4F8;
-  --background-filter-select: #FFFFFF;
+  --background-filter-current: #FFFFFF;
+  --background-filter-select: linear-gradient(134.09deg, rgba(74, 156, 247, 0.15) 3.46%, rgba(74, 156, 247, 0) 68.01%), #FFFFFF;
+  --background-select-current-1: linear-gradient(134.09deg, rgba(74, 156, 247, 0.2) 3.46%, rgba(74, 156, 247, 0) 64.94%);
+  --background-select-current-2: linear-gradient(134.09deg, rgba(241, 120, 178, 0.112) 3.46%, rgba(229, 62, 142, 0.028) 64.94%);
+  --background-select-active: #FFFFFF;
   --line: rgba(45, 55, 72, 0.15);
   --text: #2D3748;
   --text-primary-btn: #FFFFFF;
   --text-secondary: #A0AEC0;
   --accent: #4A9CF7;
+  --accent-light: #4A9CF7;
   --menu-select-item-bg: #F1F3F8;
 }
 
 html {
-  height: 100%;
   font-size: 10px;
   @include more-fullhd {
     font-size: 0.52vw;
@@ -67,6 +76,9 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   transition: 0.3s;
+  @include w1023 {
+    padding: 1rem;
+  }
 }
 
 .wrapper {
@@ -83,6 +95,10 @@ body {
   }
   @include w1023 {
     grid-template-columns: 11.1rem 1fr;
+  }
+  @include w767 {
+    grid-template-columns: auto;
+    grid-gap: 1rem;
   }
 }
 
@@ -136,7 +152,8 @@ input::-webkit-inner-spin-button {
   padding: 0;
   -webkit-appearance: none;
   appearance: none;
-  color: var(--black-text);
+  color: var(--text);
+  transition: color 0.3s;
 }
 
 input[type='number'] {
@@ -211,3 +228,4 @@ input[type='password'] {
 @import 'blocks/common/menu';
 @import 'blocks/common/top';
 @import 'blocks/wallet';
+@import 'blocks/collection';

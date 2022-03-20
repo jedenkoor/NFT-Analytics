@@ -1,0 +1,141 @@
+extends ../template
+
+block variables
+  - var title = 'Collection Analitycs'
+
+block content
+  section.collection
+    .collection__info
+      .wallet__charts.wallet-charts
+        .wallet-charts__top
+          .wallet-charts__wrap
+            .wallet-charts__filter.wallet-charts__filter--currency.wallet-charts-filter
+              button.wallet-charts-filter__item USD
+              button.wallet-charts-filter__item.active ETH
+          .wallet-charts__selects.wallet-charts-selects
+            .wallet-charts-selects__col
+              span L1
+              .wallet-charts-selects__select(active)
+                button.wallet-charts-selects__current Unique Buyers
+                ul.wallet-charts-selects__list
+                  li.wallet-charts-selects__item
+                    button None
+                  li.wallet-charts-selects__item
+                    button Volume
+                  li.wallet-charts-selects__item.active
+                    button Unique Buyers
+                  li.wallet-charts-selects__item
+                    button Floor
+                  li.wallet-charts-selects__item
+                    button Listed
+                  li.wallet-charts-selects__item
+                    button Volume, psc
+            .wallet-charts-selects__col
+              span L2
+              .wallet-charts-selects__select(active)
+                button.wallet-charts-selects__current Volume, PSC
+                ul.wallet-charts-selects__list
+                  li.wallet-charts-selects__item
+                    button None
+                  li.wallet-charts-selects__item
+                    button Volume
+                  li.wallet-charts-selects__item
+                    button Unique Buyers
+                  li.wallet-charts-selects__item
+                    button Floor
+                  li.wallet-charts-selects__item
+                    button Listed
+                  li.wallet-charts-selects__item.active
+                    button Volume, psc
+          .wallet-charts__wrap
+            .wallet-charts__filter.wallet-charts__filter--period.wallet-charts-filter
+              button.wallet-charts-filter__item.active 15M
+              button.wallet-charts-filter__item 1H
+              button.wallet-charts-filter__item 3H
+              button.wallet-charts-filter__item 1D
+              button.wallet-charts-filter__item 7D
+              button.wallet-charts-filter__item 1M
+              button.wallet-charts-filter__item 3M
+              button.wallet-charts-filter__item.wallet-charts-filter__item--calendar
+                svg.wallet-charts-filter__calendar
+                  use(xlink:href="#calendar")
+        .wallet-charts__content
+          img(src="/static/images/grathic.png")
+      .collection__general.collection-general
+        .collection-general__top
+          img.collection-general__logo(src="/static/images/ava.jpg")
+          p.collection-general__name Art Blocks Curated
+          a.collection-general__opensea(href="#")
+            img(src="/static/images/opensea.svg")
+        ul.collection-general__socials
+          li.collection-general__social
+            a.collection-general__link(href="#")
+              svg
+                use(xlink:href="#socials-twitter")
+              | Twitter
+          li.collection-general__social
+            a.collection-general__link(href="#")
+              svg
+                use(xlink:href="#socials-sait")
+              | Website
+          li.collection-general__social
+            a.collection-general__link(href="#")
+              svg
+                use(xlink:href="#socials-discord")
+              | Discord
+          li.collection-general__social
+            a.collection-general__link(href="#")
+              img(src="/static/images/etherscan.png")
+              | Etherscan
+        .collection-general__row
+          .collection-general__col
+            span Items:
+            span 1800
+          .collection-general__col
+            span Mint Price:
+            span
+              svg
+                use(xlink:href="#ethereum")
+              | 0.05
+        .collection-general__filters
+          span Filters
+          .collection-general__btns
+            button.collection-general__btn.active Unique Buyers
+            button.collection-general__btn Volume, PSC
+            button.collection-general__btn AVG
+            button.collection-general__btn Floor/Mint Price, %
+    .collection__history.collection-history
+      .collection-history__row.collection-history__row--header
+        .collection-history__col.desctop Date
+        .collection-history__col.mobile Date
+        .collection-history__col.sort Volume
+        .collection-history__col.sort.percent Volume, %
+        .collection-history__col.sort.active Floor
+        .collection-history__col.sort.percent Floor, %
+        .collection-history__col.sort Holders
+        .collection-history__col.sort Listed
+        .collection-history__col.sort.percent Listed, %
+      - for(var i = 0; i < 10; i++)
+        .collection-history__row
+          .collection-history__col.desctop September 2021
+          .collection-history__col.mobile 09.2021
+          .collection-history__col 9,000
+            span.increase +20.03%
+          .collection-history__col.increase.percent +20.03%
+          .collection-history__col 9,000
+            span.decrease -66.33%
+          .collection-history__col.decrease.percent -66.33%
+          .collection-history__col 9,000
+          .collection-history__col 9,000
+            span.increase +20.03%
+          .collection-history__col.increase.percent +20.03%
+      .collection-history__row
+        .collection-history__col.desctop Total
+        .collection-history__col.mobile Total
+        .collection-history__col 9,000
+        .collection-history__col.percent
+        .collection-history__col 9,000
+        .collection-history__col.percent
+        .collection-history__col 9,000
+        .collection-history__col 9,000
+        .collection-history__col.percent
